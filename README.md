@@ -1,16 +1,36 @@
-# React + Vite
+# Webcam Analysis App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple React + Vite app that sends a webcam photo to OpenAI and shows what the model sees.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Start Camera** — turns on your webcam and shows a live preview  
+2. **Capture** — freezes a still frame from the video  
+3. **Analyze with AI** — sends that image to OpenAI (`gpt-5.6`) and displays a short text description in a result box below the buttons
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the Oxlint configuration
+Create a `.env` file in the project root:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+VITE_OPENAI_API_KEY=your-openai-api-key
+```
+
+Restart the dev server after changing `.env`.
+
+## Run
+
+```bash
+npm run dev
+```
+
+Open the local URL (usually `http://localhost:5173`), allow camera access, then capture and analyze.
+
+## Notes
+
+- Do not commit your `.env` file (it is already in `.gitignore`).
+- The OpenAI key is used from the browser via Vite’s `VITE_` env vars — fine for a class demo, not for a production public site.
