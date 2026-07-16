@@ -47,12 +47,12 @@ export default function LabubuAvatar({
 
             <div className="labubu-eyes">
               <div className="labubu-eye">
-                <span className="labubu-glint">✦</span>
-                <span className="labubu-spark labubu-spark--right" />
+                <span className="labubu-pupil" />
+                <span className="labubu-glint" />
               </div>
               <div className="labubu-eye">
-                <span className="labubu-glint">✦</span>
-                <span className="labubu-spark labubu-spark--left" />
+                <span className="labubu-pupil" />
+                <span className="labubu-glint" />
               </div>
             </div>
 
@@ -62,15 +62,24 @@ export default function LabubuAvatar({
               <span>...</span>
             </div>
 
-            <div className="labubu-smile">
-              <div className="labubu-teeth labubu-teeth--top">
+            <div className="labubu-mouth">
+              <svg
+                className="labubu-smile-line"
+                viewBox="0 0 100 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M 6 6 Q 50 26 94 6"
+                  fill="none"
+                  stroke="#231d1a"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <div className="labubu-teeth">
                 {Array.from({ length: 7 }).map((_, i) => (
-                  <span key={`top-${i}`} className="labubu-tooth" />
-                ))}
-              </div>
-              <div className="labubu-teeth labubu-teeth--bottom">
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <span key={`bot-${i}`} className="labubu-tooth" />
+                  <span key={`tooth-${i}`} className="labubu-tooth" />
                 ))}
               </div>
             </div>

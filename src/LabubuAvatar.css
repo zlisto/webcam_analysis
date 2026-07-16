@@ -1,9 +1,11 @@
 .labubu-avatar {
   --labubu-fur: #5c4a43;
   --labubu-fur-dark: #4a3b35;
-  --labubu-skin: #f3d3bd;
-  --labubu-skin-deep: #e0bba2;
+  --labubu-skin: #ffffff;
+  --labubu-skin-deep: #f7f7f7;
   --scale: 0.42;
+  color-scheme: only light;
+  forced-color-adjust: none;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -13,7 +15,7 @@
 }
 
 .labubu-avatar--sm {
-  --scale: 0.34;
+  --scale: 0.28;
 }
 
 .labubu-avatar--md {
@@ -105,12 +107,16 @@
 
 .labubu-face {
   position: relative;
-  width: calc(176px * var(--scale));
-  height: calc(160px * var(--scale));
-  background: var(--labubu-skin);
+  width: calc(188px * var(--scale));
+  height: calc(168px * var(--scale));
+  /* background-image resists browser auto-dark inversion better than solid white */
+  background-color: #ffffff !important;
+  background-image: linear-gradient(#ffffff, #ffffff) !important;
   border-radius: 45%;
-  border: 1px solid #e8c0a7;
-  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.35);
+  color-scheme: only light;
+  forced-color-adjust: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,9 +129,9 @@
   top: calc(64px * var(--scale));
   width: calc(32px * var(--scale));
   height: calc(24px * var(--scale));
-  background: #fb923c;
+  background: #fda4af;
   border-radius: 999px;
-  opacity: 0.3;
+  opacity: 0.35;
   filter: blur(4px);
 }
 
@@ -150,38 +156,33 @@
   position: relative;
   width: calc(40px * var(--scale));
   height: calc(56px * var(--scale));
-  background: #231d1a;
+  background: #ffffff;
+  border: calc(2px * var(--scale)) solid #231d1a;
   border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: calc(10px * var(--scale));
+}
+
+.labubu-pupil {
+  width: calc(22px * var(--scale));
+  height: calc(30px * var(--scale));
+  background: #111111;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 calc(1px * var(--scale)) #000;
 }
 
 .labubu-glint {
-  color: #fde047;
-  font-size: calc(10px * var(--scale));
-  font-weight: 700;
-  animation: labubu-pulse 1.6s ease-in-out infinite;
-}
-
-.labubu-spark {
   position: absolute;
-  bottom: calc(12px * var(--scale));
-  width: calc(6px * var(--scale));
-  height: calc(6px * var(--scale));
-  background: white;
+  top: calc(10px * var(--scale));
+  right: calc(8px * var(--scale));
+  width: calc(7px * var(--scale));
+  height: calc(7px * var(--scale));
+  background: #ffffff;
   border-radius: 50%;
-  opacity: 0.6;
-}
-
-.labubu-spark--right {
-  right: calc(12px * var(--scale));
-}
-
-.labubu-spark--left {
-  left: calc(12px * var(--scale));
+  opacity: 0.95;
+  animation: labubu-pulse 1.6s ease-in-out infinite;
 }
 
 .labubu-nose {
@@ -196,45 +197,48 @@
 .labubu-freckles {
   display: flex;
   gap: calc(16px * var(--scale));
-  color: #8e6853;
+  color: #c4a090;
   font-size: calc(7px * var(--scale));
   font-weight: 700;
-  opacity: 0.6;
+  opacity: 0.7;
   margin-top: calc(-4px * var(--scale));
 }
 
-.labubu-smile {
-  width: calc(140px * var(--scale));
-  height: calc(40px * var(--scale));
-  background: white;
-  border: calc(2px * var(--scale)) solid #382b26;
-  border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(40px * var(--scale)) calc(40px * var(--scale));
-  margin-top: calc(8px * var(--scale));
-  overflow: hidden;
+.labubu-mouth {
+  position: relative;
+  width: calc(132px * var(--scale));
+  height: calc(36px * var(--scale));
+  margin-top: calc(6px * var(--scale));
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
+  align-items: center;
+}
+
+.labubu-smile-line {
+  width: 100%;
+  height: calc(18px * var(--scale));
+  display: block;
+  overflow: visible;
 }
 
 .labubu-teeth {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  padding: 0 calc(4px * var(--scale));
-}
-
-.labubu-teeth--bottom {
-  transform: rotate(180deg);
-  padding: 0 calc(8px * var(--scale));
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 78%;
+  margin-top: calc(-6px * var(--scale));
+  padding: 0 calc(2px * var(--scale));
 }
 
 .labubu-tooth {
   width: 0;
   height: 0;
-  border-left: calc(4px * var(--scale)) solid transparent;
-  border-right: calc(4px * var(--scale)) solid transparent;
-  border-top: calc(6px * var(--scale)) solid #382b26;
+  border-left: calc(5px * var(--scale)) solid transparent;
+  border-right: calc(5px * var(--scale)) solid transparent;
+  border-top: calc(11px * var(--scale)) solid #ffffff;
+  filter: drop-shadow(0 1px 0 #231d1a);
+  forced-color-adjust: none;
+  color-scheme: only light;
 }
 
 .labubu-body {
@@ -283,10 +287,13 @@
 .labubu-foot {
   width: calc(40px * var(--scale));
   height: calc(24px * var(--scale));
-  background: var(--labubu-skin-deep);
+  background-color: #ffffff !important;
+  background-image: linear-gradient(#ffffff, #ffffff) !important;
   border-radius: calc(12px * var(--scale)) calc(12px * var(--scale)) calc(6px * var(--scale)) calc(6px * var(--scale));
-  border-bottom: calc(4px * var(--scale)) solid #c59d83;
+  border-bottom: calc(4px * var(--scale)) solid #e5e5e5;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color-scheme: only light;
+  forced-color-adjust: none;
 }
 
 .labubu-arm {

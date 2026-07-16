@@ -130,7 +130,7 @@ function App() {
           <h1>See what the AI sees</h1>
           <p className="subtitle">Start your webcam, snap a frame, and let GPT describe it.</p>
         </div>
-        <LabubuAvatar color="#f9a8d4" size="sm" className="labubu-title labubu-title--right" />
+        <LabubuAvatar color="#ff4fa3" size="sm" className="labubu-title labubu-title--right" />
       </header>
 
       <section className="stage">
