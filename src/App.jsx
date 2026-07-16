@@ -123,7 +123,7 @@ function App() {
   return (
     <div className="app">
       <header className="hero">
-        <p className="eyebrow">Lecture 02 · Webcam Analyzer</p>
+        <p className="eyebrow">Webcam Analyzer</p>
         <h1>See what the AI sees</h1>
         <p className="subtitle">Start your webcam, snap a frame, and let GPT describe it.</p>
       </header>
