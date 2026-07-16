@@ -1,12 +1,20 @@
 .app {
-  width: min(760px, 100%);
+  width: min(920px, 100%);
   margin: 0 auto;
   padding: 2.5rem 1.25rem 3rem;
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
   text-align: center;
   margin-bottom: 1.75rem;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -28,6 +36,14 @@
   color: #4b5d78;
 }
 
+.labubu-title--left .labubu-figure {
+  animation-delay: 0s;
+}
+
+.labubu-title--right .labubu-figure {
+  animation-delay: 1.2s;
+}
+
 .stage {
   margin-bottom: 1.25rem;
 }
@@ -42,6 +58,18 @@
     #0f1419;
   box-shadow: 0 18px 50px rgba(10, 37, 64, 0.18);
   aspect-ratio: 4 / 3;
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-copy {
+    grid-column: 1 / -1;
+    order: -1;
+  }
 }
 
 .preview-media {
@@ -145,6 +173,13 @@
   font-size: 1.05rem;
   line-height: 1.6;
   white-space: pre-wrap;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #7c8db5;
+  font-size: 0.9rem;
 }
 
 @keyframes glow-in {

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import OpenAI from 'openai'
+import LabubuAvatar from './LabubuAvatar'
 import './App.css'
 
 const MODEL = 'gpt-5.6'
@@ -123,9 +124,13 @@ function App() {
   return (
     <div className="app">
       <header className="hero">
-        <p className="eyebrow">Webcam Analyzer</p>
-        <h1>See what the AI sees</h1>
-        <p className="subtitle">Start your webcam, snap a frame, and let GPT describe it.</p>
+        <LabubuAvatar color="#9ca3af" size="sm" className="labubu-title labubu-title--left" />
+        <div className="hero-copy">
+          <p className="eyebrow">Webcam Analyzer</p>
+          <h1>See what the AI sees</h1>
+          <p className="subtitle">Start your webcam, snap a frame, and let GPT describe it.</p>
+        </div>
+        <LabubuAvatar color="#f9a8d4" size="sm" className="labubu-title labubu-title--right" />
       </header>
 
       <section className="stage">
@@ -170,6 +175,8 @@ function App() {
           {analysis || 'Your analysis will land here after you press the magic wand.'}
         </p>
       </section>
+
+      <footer className="footer">© 2026 Tauhid Zaman</footer>
     </div>
   )
 }
